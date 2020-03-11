@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<h1 style='color:green'>PUBG PORTFOLIO</h1>
+<div >
+{% load static %}
+<a href={% url 'blog:home1' %}>BLOG</a>
+<img src={% static 'portfolio/854917.jpg' %}height=500,width=400>
+{% for pro in projects %}
+     <h2> {{ pro.title }}</h2>
+     <p>{{ pro.description }}</p>
+     <img src={{pro.image.url}} height=100,width=100>
+     {% if pro.url %}
+     <br> <a href={{ pro.url }}>LINK</a>
+     {% endif %}
+     
+{% endfor %}
+<div>
